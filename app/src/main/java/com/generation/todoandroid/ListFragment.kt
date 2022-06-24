@@ -30,7 +30,7 @@ class ListFragment : Fragment(), TaskClickListener {
 
 
 
-        val adapter = TarefaAdapter(this, mainViewModel)
+        val adapter = TarefaAdapter(this, mainViewModel, requireContext())
         binding.recyclerTarefa.layoutManager = LinearLayoutManager(context)
         binding.recyclerTarefa.adapter = adapter
         binding.recyclerTarefa.setHasFixedSize(true)

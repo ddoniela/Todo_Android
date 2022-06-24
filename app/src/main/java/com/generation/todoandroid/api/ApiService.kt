@@ -2,10 +2,7 @@ package com.generation.todoandroid.api
 import com.generation.todoandroid.model.Categoria
 import com.generation.todoandroid.model.Tarefa
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.PUT
+import retrofit2.http.*
 
 interface ApiService {
 
@@ -24,6 +21,13 @@ interface ApiService {
     suspend fun updateTarefa(
         @Body tarefa: Tarefa
     ): Response<Tarefa>
+
+    @DELETE("tarefa/{id}")
+    suspend fun deleteTarefa(
+        @Path("id") id: Long
+    ): Response<Tarefa>
+
+
 
 
 }
